@@ -8,7 +8,7 @@ import asyncio
 import json
 
 models.Base.metadata.create_all(bind=engine)
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 # 存储连接的 WebSocket 客户端
 
 class ClientsData:
