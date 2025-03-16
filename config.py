@@ -1,4 +1,8 @@
-SECRET_KEY = "mm123123"
-ALGORITHM = "HS256"
-TOKEN_EXPIRE_MINUTES = 60
-DATABASE_URL = "mysql+pymysql://root:#Include<754682>@localhost/chat_db"
+import yaml
+with open("config.yaml", "r", encoding="utf-8") as file:
+    data = yaml.safe_load(file)
+
+SECRET_KEY = data["SECRET_KEY"]
+ALGORITHM = data["ALGORITHM"]
+TOKEN_EXPIRE_MINUTES = data["TOKEN_EXPIRE_MINUTES"]
+DATABASE_URL = data["DATABASE_URL"]
